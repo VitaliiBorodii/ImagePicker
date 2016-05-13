@@ -74,7 +74,7 @@ public class ImagePicker extends CordovaPlugin {
             imagePickerIntent.putExtra("OUTPUT_TYPE", outputType);
 
             // some day, when everybody uses a cordova version supporting 'hasPermission', enable this:
-            /*
+            
             if (cordova != null) {
                  if (cordova.hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE)) {
                     cordova.startActivityForResult(this, imagePickerIntent, 0);
@@ -86,9 +86,9 @@ public class ImagePicker extends CordovaPlugin {
                      );
                  }
              }
-             */
+            
             // .. until then use:
-            if (hasReadPermission()) {
+            /*if (hasReadPermission()) {
                 cordova.startActivityForResult(this, imagePickerIntent, 0);
             } else {
                 requestReadPermission();
@@ -96,6 +96,7 @@ public class ImagePicker extends CordovaPlugin {
                 // The best thing to do for the dev is check 'hasReadPermission' manually and
                 // run 'requestReadPermission' or 'getPictures' based on the outcome.
             }
+            */
             return true;
         }
         return false;
